@@ -10,6 +10,10 @@ var rootCmd = &cobra.Command{
 	Short: "Export AWS SecurityHub findings to Google Sheet.",
 }
 
+func init() {
+	rootCmd.CompletionOptions.DisableDefaultCmd = true
+}
+
 func Execute() {
 	err := rootCmd.Execute()
 	if err != nil {

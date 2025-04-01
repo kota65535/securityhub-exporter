@@ -32,7 +32,9 @@ func init() {
 	c.PersistentFlags().StringVarP(&configFile, "config", "c", "config.yml", "config file path")
 
 	rootCmd.AddCommand(c)
+}
 
+func run() error {
 	viper.SetConfigFile(configFile)
 	viper.AutomaticEnv()
 
@@ -41,9 +43,7 @@ func init() {
 
 	err = viper.Unmarshal(&config)
 	cobra.CheckErr(err)
-}
 
-func run() error {
 	log.Println("Fetching findings...")
 	findings, err := getFindingsWithTags(&config)
 	if err != nil {
