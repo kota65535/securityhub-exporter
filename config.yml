@@ -1,0 +1,36 @@
+# Path to the Google Cloud credentials file (required)
+credentialsPath: aws-securityhub-exporter-cfa06d012345.json
+
+# Google Drive folder ID where the spreadsheet is exported (required)
+folderId: 1U6Tz5-3qfgolLWwWICVDMPBlVzFOx7en
+
+# Spreadsheet title
+title: SecurityHub Findings
+
+# Resource tag by which the findings are grouped
+groupByTag: Project
+
+# Severities to filter the findings.
+# Available values are: CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL
+severities:
+  - CRITICAL
+  - HIGH
+
+# Product names to filter the findings.
+# Available values are: Security Hub, Inspector, etc...
+productNames:
+  - Security Hub
+
+# Regions to filter the findings
+regions:
+  - ap-northeast-1
+
+# Color code for each severity
+colors:
+  CRITICAL: '#EA9999'
+  HIGH: '#F9CB9C'
+  MEDIUM: '#B4A7D6'
+  LOW: '#A4C2F4'
+
+# Index sheet name
+indexSheetName: Index
